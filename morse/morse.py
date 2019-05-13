@@ -35,7 +35,7 @@ class Morse(object):
       code.append((letter, self._letter_to_morse(letter)))
     return code
 
-def code(letters):
+def morse_led(letters):
   morse_encoder = Morse()
   encoded = morse_encoder.to_sequence(letters)
   GPIO.setmode(GPIO.BCM)
@@ -59,7 +59,7 @@ def main():
   else:
     to_encode = 'Hello world.'
   try:
-    code(to_encode)
+    morse_led(to_encode)
   finally:
     print("Cleaning up...")
     GPIO.cleanup()
