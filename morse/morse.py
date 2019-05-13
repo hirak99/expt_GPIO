@@ -44,9 +44,9 @@ def code(letters):
     print(letter, end='', flush=True)
     for state in sequence:
       if state == "0":
-        GPIO.output(LED_PIN, GPIO.LOW)
-      elif state == "1":
         GPIO.output(LED_PIN, GPIO.HIGH)
+      elif state == "1":
+        GPIO.output(LED_PIN, GPIO.LOW)
       else:
         raise RuntimeError("Unknown character in seq.")
       time.sleep(BEAT)
